@@ -30,6 +30,12 @@ margin: auto;
   <body>
    <h1>My favorite anmial is a fox</h1>
    <p>fox.</p>
-   <img src="https://cdn.britannica.com/30/145630-050-D1B34751/Red-foxes-insects-rodents-fruit-grain-carrion.jpg?w=400&h=300&c=crop" > 
+   <img id= "animal-image"src="https://cdn.britannica.com/30/145630-050-D1B34751/Red-foxes-insects-rodents-fruit-grain-carrion.jpg?w=400&h=300&c=crop" >
+   <script>
+    let animal = document.getElementById('animal-image');
+    animal.addEventListener('click', () => {
+     alert('you clicked the fox!');
+    });
+   </script>
      </body>
 </html>
