@@ -23,6 +23,21 @@ let result = '';
   
 
 //Decrypt 
+
+const encryptForm = document.getElementById('encrypt-form')
+encryptForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  //get the value of the content
+  let messageElement = document.getElementById('encrypt');
+  let message = messageElement.value;
+  
+
+    let encrypted = enrypt(message);
+  
+  let encodedMessageElement = document.getElementById('encoded-message');
+  encodedMessageElement.innerText = encrypted; 
+          }); 
+
 function Decrypt(text) {
 let result = '';
   
