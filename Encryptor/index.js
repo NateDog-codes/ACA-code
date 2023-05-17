@@ -32,7 +32,7 @@ encryptForm.addEventListener('submit', function(e) {
   let message = messageElement.value;
   
 
-    let encrypted = enrypt(message);
+    let encrypted = encrypt(message);
   
   let encodedMessageElement = document.getElementById('encoded-message');
   encodedMessageElement.innerText = encrypted; 
