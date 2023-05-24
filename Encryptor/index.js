@@ -1,25 +1,28 @@
-console.log('The encryptor js file loaded');
+console.log('The encryptor js file loaded'); 
 
-const letters = 'abcdefghijklmnopqrstuvwxyz!?ABCDEFGHIJKLMNOPQRSTUVWXYZ ';
-const encrypt_key = 'bcdefghijklmnopqrstuvwxyza?!BCDEFGHIJKLMNOPQRSTUVWXYZA ';
+const letters = 'abcdefghijklmnopqrstuvwxyz';
+const encrypt_key = 'bcdefghijklmnopqrstuvwxyza';
 
 function encrypt(text) {
-let result = '';
+  let result = '';
   
   for (let i = 0; i < text.length; i++) {
-    let letter = text[i]; 
+    let letter = text[i];
     let letterIndex = letters.indexOf(letter);
     
     if (letterIndex < 0) {
       result += letter;
-    }
+    }// if
+    
     else {
-      result += encrypt_key[letterIndex];
-  }
- }
+      result += encrypt_key[letterIndex]; 
+    }// else
+    
+  }// for
   
   return result;
-}
+  
+}// encrypt
 
 
 function decrypt(text) {
@@ -42,81 +45,40 @@ function decrypt(text) {
   return result;
   
 }// decrypt
-  
 
- 
-
-const encryptForm = document.getElementById('encrypt-form')
+// add event listener to the form
+const encryptForm = document.getElementById('encrypt-form');
 encryptForm.addEventListener('submit', function(e) {
   e.preventDefault();
-  //get the value of the content
+  
+  // get the value of the content
   let messageElement = document.getElementById('encrypt');
   let message = messageElement.value;
   
-
-    let encrypted = encrypt(message);
+  // encrypt the content
+  let encrypted = encrypt(message);
   
+  // display encrypted message in p element
   let encodedMessageElement = document.getElementById('encoded-message');
-  encodedMessageElement.innerText = encrypted; 
-          }); 
-
-function Decrypt(text) {
-let result = '';
-  
-  for (let i = 0; i < text.length; i++) {
-    let letter = text[i]; 
-    let letterIndex = letters.indexOf(letter);
-    
-    if (letterIndex < 0) {
-      result += letter;
-    }
-    else {
-      result += letters[letterIndex];
-  }
- }
-  
-  return result;
-}
-  
+  encodedMessageElement.innerText = encrypted;
+});
 
 
-
-
-
-
-
-const decryptForm = document.getElementById('decrypt-form')
+// add event listener to the decrypt form
+const decryptForm = document.getElementById('decrypt-form');
 decryptForm.addEventListener('submit', function(e) {
   e.preventDefault();
-  //get the value of the content
+  
+  // get the value of the content
   let messageElement = document.getElementById('decrypt');
   let message = messageElement.value;
   
-
-    let decrypted = decrypt(message);
+  // decrypt the content
+  let decrypted = decrypt(message);
   
+  // display encrypted message in p element
   let decodedMessageElement = document.getElementById('decrypted-message');
-  decodedMessageElement.innerText = decrypted; 
-          }); 
-
-function Decrypt(text) {
-let result = '';
-  
-  for (let i = 0; i < text.length; i++) {
-    let letter = text[i]; 
-    let letterIndex = letters.indexOf(letter);
-    
-    if (letterIndex < 0) {
-      result += letter;
-    }
-    else {
-      result += letters[letterIndex];
-  }
- }
-  
-  return result;
-
-  
+  decodedMessageElement.innerText = decrypted;
+});
 
 
- 
