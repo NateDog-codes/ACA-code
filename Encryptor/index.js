@@ -95,7 +95,7 @@ decryptForm.addEventListener('submit', function(e) {
 
     let decrypted = decrypt(message);
   
-  let decodedMessageElement = document.getElementById('decoded-message');
+  let decodedMessageElement = document.getElementById('decrypted-message');
   decodedMessageElement.innerText = decrypted; 
           }); 
 
